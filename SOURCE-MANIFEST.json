@@ -7,15 +7,15 @@
       "source": "LICENSE"
     },
     {
-      "bytes": 7372,
+      "bytes": 8019,
       "path": "Northmind.md",
-      "sha256": "53ca2f61452ed6b57e4969f16f4e6db681fa6dec0bf71a4e695cbfe2c6cfe194",
+      "sha256": "6f0055aad099f94a6b883ce9a26a582475942dd7c008f437f18e4d2a4ae2af22",
       "source": "docs/submission/Northmind.md"
     },
     {
-      "bytes": 6693,
+      "bytes": 7659,
       "path": "README.md",
-      "sha256": "81331e122bf9d6647bba793fb6b32dcd97214a0783057efa7e6b48cd8a63e2dd",
+      "sha256": "e119f1eec2ceaee218b95d806d57ae98e0d1f56d10f54d16cbb87f5dcb4319e3",
       "source": "docs/submission/README.md"
     },
     {
@@ -1165,9 +1165,9 @@
       "source": "possession/transfer_validation.py"
     },
     {
-      "bytes": 192,
+      "bytes": 424,
       "path": "requirements-submission.txt",
-      "sha256": "4186b06e24e5d96671ad1e054f928187a51330f46f466f4ec84a5cc3426e048e",
+      "sha256": "4ce3253fdc0f623a0c13dbed6d82fcaf0f36121ae531c2f8e354b9194d6c2455",
       "source": "requirements-submission.txt"
     },
     {
@@ -1225,9 +1225,9 @@
       "source": "scripts/build_colab_phase2.py"
     },
     {
-      "bytes": 8502,
+      "bytes": 8575,
       "path": "scripts/build_submission_repo.py",
-      "sha256": "5ff7d9abefc90a2f8e82439f683b0db93b2f873961ff7c49b4782eb6233acf00",
+      "sha256": "62d714c4c0685f1fb565108b1dd4bdc2bdae0326ab1ef031d8189e4e2a645b63",
       "source": "scripts/build_submission_repo.py"
     },
     {
@@ -1237,9 +1237,9 @@
       "source": "scripts/check_submission_install.py"
     },
     {
-      "bytes": 4523,
+      "bytes": 10052,
       "path": "scripts/clean_submission_install.py",
-      "sha256": "ad5037f66a62de0244900c609fc28ca42a3be62b62e0579a185e39a6c8ceb8dc",
+      "sha256": "34f309eb5907a7aeefef8a193110e0b30f921912d057d58314f63fad912b9d2b",
       "source": "scripts/clean_submission_install.py"
     },
     {
@@ -1327,9 +1327,9 @@
       "source": "scripts/external_reproduction.py"
     },
     {
-      "bytes": 9251,
+      "bytes": 9469,
       "path": "scripts/final_submission.py",
-      "sha256": "3bd6bda1b7e292b4d84378f0cf7ce1feadc9835e62d59b7c20501e51e1a98e87",
+      "sha256": "1f4615278b840e45b9ec29dfd89a8c247292fcea616c2a36ec98e229ace9990b",
       "source": "scripts/final_submission.py"
     },
     {
@@ -1639,9 +1639,9 @@
       "source": "scripts/run_experiments.py"
     },
     {
-      "bytes": 25104,
+      "bytes": 25681,
       "path": "scripts/run_local.py",
-      "sha256": "0f1067117886fd75dff83b2bb92cf90a08b9969c71ed2a026f698c0c748d3281",
+      "sha256": "cf5bc40dc40435d57d020aad164edfaa9bb16d8146a1308c182656d41f6b5ac1",
       "source": "scripts/run_local.py"
     },
     {
@@ -1681,9 +1681,9 @@
       "source": "scripts/submission_assets.py"
     },
     {
-      "bytes": 636,
+      "bytes": 668,
       "path": "scripts/submission_environment.py",
-      "sha256": "fc30728cb3abb8460632437dbc242a19cb01c5f9135fc130cdc5ef57d1a66177",
+      "sha256": "2211f0c8b3563e27cf82ac7a59c1a70c68e5d30ad5186c5378907beda673561a",
       "source": "scripts/submission_environment.py"
     },
     {
@@ -1781,6 +1781,12 @@
       "path": "scripts/verify_phase8.py",
       "sha256": "f05962b166f92355697bcc9bbb45ade685cf00bbf6d9c997a01fd858e14827e8",
       "source": "scripts/verify_phase8.py"
+    },
+    {
+      "bytes": 2030,
+      "path": "scripts/verify_public_submission.py",
+      "sha256": "350263258167335e8207d21877b3b1e7291aa56f3d9c73787dfe35a24b23675d",
+      "source": "scripts/verify_public_submission.py"
     },
     {
       "bytes": 4208,

@@ -10,6 +10,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LOGS = ROOT / "evaluation" / "reports" / "local-logs"
 TASKS = {
+    "complete-submission-certifi": ("from scripts.clean_submission_install import complete_certifi_public_wheel; raise SystemExit(complete_certifi_public_wheel())", ()),
+    "complete-submission-public-wheels": ("from scripts.clean_submission_install import complete_public_wheels; raise SystemExit(complete_public_wheels())", ()),
+    "complete-submission-install": ("from scripts.clean_submission_install import complete; raise SystemExit(complete())", ()),
+    "verify-public-submission": ("from scripts.verify_public_submission import main; raise SystemExit(main())", ()),
     "clean-submission-install": ("from scripts.clean_submission_install import main; raise SystemExit(main())", ()),
     "refresh-submission-source": ("from scripts.build_submission_repo import refresh_review_copy; raise SystemExit(refresh_review_copy())", ()),
     "compare-submission-replay": ("from scripts.compare_submission_replay import main; raise SystemExit(main())", ()),

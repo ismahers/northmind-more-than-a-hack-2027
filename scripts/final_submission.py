@@ -10,6 +10,7 @@ import io
 import json
 from pathlib import Path
 import platform
+import re
 import sys
 import uuid
 
@@ -54,7 +55,7 @@ def _write_json(path, record):
 def _publish_status(status):
     # Explicit whitelist: no input paths, prediction hashes, counts or labels.
     allowed = ("phase", "validated", "reproducible", "candidate_exists",
-               "fallback_exists", "exception_type", "environment")
+               "fallback_exists", "exception_type", "environment", "missing_module")
     safe = {key: status[key] for key in allowed if key in status}
     _write_json(OUTPUT / "status.json", safe)
     _write_json(PUBLIC_STATUS, safe)
@@ -185,6 +186,8 @@ def main():
     except BaseException as error:
         # Never expose messages, tracebacks, paths or input/output values.
         status["exception_type"] = type(error).__name__
+        if isinstance(error, ModuleNotFoundError) and isinstance(error.name, str) and re.fullmatch(r"[A-Za-z_][A-Za-z0-9_.]*", error.name):
+            status["missing_module"] = error.name
         status["candidate_exists"] = (OUTPUT / "Northmind.csv").is_file()
         status["fallback_exists"] = (OUTPUT / "Northmind-fallback.csv").is_file()
         try:

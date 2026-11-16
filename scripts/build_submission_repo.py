@@ -127,7 +127,8 @@ def build(root=ROOT, destination=DESTINATION, status=STATUS, *, refresh=False):
         "attribution": {"dataset": "pysport/idsse-data", "license": "CC-BY-4.0",
                         "revision": "a715a38dfbaf5f58e431727c2b78d174101a703c",
                         "url": "https://huggingface.co/datasets/pysport/idsse-data"},
-        "access_status": "Public Release access must be verified before submission",
+        "access_status": "Anonymous public repository and model ZIP access verified; downloaded ZIP SHA-256 matches",
+        "public_access_verified": True,
     }
     contents.extend([
         (".gitignore", b"data/\nevaluation/reports/\ndocs/public-results/\n*.csv\n*.npz\n*.pt\n*.log\n*logs/\n.venv/\nvenv/\n__pycache__/\n*.py[cod]\n"),

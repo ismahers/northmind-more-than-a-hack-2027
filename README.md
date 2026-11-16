@@ -3,18 +3,19 @@
 16 de noviembre de 2026. Documento técnico: [Northmind.md](Northmind.md).
 
 Este paquete contiene las fuentes de la receta de inferencia BAR–ATH. La
-publicación prevista es `ismahers/northmind-submission-2027`, en un repositorio
-nuevo con historia limpia. El fork de investigación permanece separado.
-La URL solo será válida para la entrega cuando el repositorio y sus artefactos
-sean accesibles públicamente y hayan sido revisados.
+publicación está en [ismahers/northmind-submission-2027](https://github.com/ismahers/northmind-submission-2027),
+un repositorio nuevo con historia limpia. El fork de investigación permanece
+separado. Se verificaron el acceso anónimo al código y al ZIP de modelos,
+así como el SHA-256 del ZIP descargado públicamente.
 
 ## Preparación
 
 1. Usar Python **3.13.17**, un entorno virtual nuevo y las versiones fijadas
    en `requirements-submission.txt`. La referencia de inferencia usa NumPy
    **2.2.6**, pandas **2.2.3**, python-dateutil **3.0.0** y PyTorch
-   **2.10.0+cpu**. La instalación fría debe comprobarse;
-   el éxito del entorno histórico no la garantiza.
+   **2.10.0+cpu**. En Windows conviene clonar en una raíz corta, como `C:/nm`,
+   o habilitar soporte de rutas largas. Se comprobó un entorno nuevo aislado
+   en el mismo host Windows; véanse los detalles de instalación más abajo.
 2. Obtener legalmente el paquete oficial de datos. Descomprimirlo localmente
    en `data/` o indicar su raíz mediante `MTAH_DATA_DIR`, conservando la
    estructura esperada por `games.py`. Se necesitan ATD y Smart Tagging.
@@ -22,7 +23,7 @@ sean accesibles públicamente y hayan sido revisados.
 3. Descargar [la cápsula de modelos](https://github.com/ismahers/northmind-submission-2027/releases/download/submission-v1/northmind-public-experiments-2026-10-28.zip)
    y guardar el ZIP, sin descomprimir, como
    `evaluation/reports/public-assets/northmind-public-experiments-2026-10-28.zip`.
-   La Release debe existir y ser pública antes de enviar. El restaurador
+   La Release es pública y su descarga anónima fue comprobada. El restaurador
    comprueba SHA-256 del ZIP y de cada archivo, y preserva registros,
    selecciones y sellos originales.
 
@@ -34,9 +35,23 @@ python -m venv .venv
 ```
 
 Las dos últimas órdenes restauran los artefactos públicos y generan la
-entrega. Antes de publicar, comprobar que ambas terminan correctamente desde
-una copia limpia. No se debe dar por terminada una entrega que aún requiera
-recuperar archivos solo disponibles en el ordenador de sus autores.
+entrega. El comando `pip install -r` completo falló en el host de verificación;
+no se afirma que esa única orden se haya probado con éxito. El entorno nuevo
+se completó con ruedas oficiales de PyPI, verificadas mediante sus SHA-256,
+de `numba==0.61.2`, `llvmlite==0.44.0` y `certifi==2025.10.5`, usando
+`pip --isolated install --no-index --no-deps` sobre los archivos descargados.
+Las dos primeras ruedas corresponden a `cp313-cp313-win_amd64`; certifi usa
+`py3-none-any`. `pip check` terminó correctamente.
+
+`scripts/clean_submission_install.py` implementa esta recuperación sin leer
+logs: `complete_public_wheels()` obtiene las ruedas numba/llvmlite y
+`complete_certifi_public_wheel()` obtiene certifi, comprobando los hashes del
+índice PyPI antes de instalar. Estas funciones completan exclusivamente el
+entorno independiente `evaluation/reports/final-clean-venv-v2`, creado por
+`clean-submission-install`; no modifican automáticamente `.venv`. Para ese
+flujo están registradas `complete-submission-public-wheels` y
+`complete-submission-certifi` en `scripts.run_local`. La lista final fija
+también las dependencias transitivas del entorno comprobado.
 
 ## Contrato de salida y comprobación
 
@@ -63,13 +78,12 @@ Comprobación local del 16 de noviembre: generación final OK, candidato y
 reserva válidos, con dos generaciones independientes desde ATD sin reutilizar
 la caché de features y SHA-256 coincidentes. Restauración de 66 archivos con
 hashes verificados y ocho pruebas de portabilidad correctas. Esto no acredita
-una puntuación BAR–ATH. La disponibilidad de wheels de las cinco dependencias
-se comprobó para Windows/Linux mediante metadatos; no equivale a una
-instalación fría comprobada. Una copia de fuentes y modelos en otra raíz
-Windows, sin caché target preexistente, completó dos generaciones válidas y
-produjo CSV candidato/reserva idénticos byte a byte a los originales. Se usó
-el mismo entorno Python 3.13.17: esta prueba verifica portabilidad de raíz,
-sin acreditar una instalación fría o ejecución Linux.
+una puntuación BAR–ATH. Una copia de fuentes y modelos en otra raíz Windows,
+sin caché target preexistente y con un entorno nuevo aislado Python 3.13.17,
+completó dos generaciones válidas y produjo CSV candidato/reserva idénticos
+byte a byte a los originales. Esto acredita reproducción con entorno nuevo
+y raíz nueva en el mismo host Windows, mediante el procedimiento de instalación
+descrito. No se comprobó una ejecución Linux ni otro host físico.
 
 ## Artefactos y atribución
 
@@ -85,10 +99,10 @@ La cápsula histórica de partida se denomina
 f09c894ad962364a2a16357749d9de304552532db58bb047f6fd2f9a1ca25162
 ```
 
-Su manifiesto público registra 66 archivos. Este dato identifica el paquete;
-no demuestra que todos los artefactos de la entrega final estén restaurados
-ni que una Release privada sea accesible para los organizadores. El manifiesto
-final debe fijar la URL pública y confirmar la cobertura de dependencias.
+Su manifiesto público registra 66 archivos, restaurados y verificados. La
+[Release submission-v1](https://github.com/ismahers/northmind-submission-2027/releases/tag/submission-v1)
+incluye el paquete y permite descargarlo sin autenticación. El manifiesto final
+fija su URL y SHA-256; los artefactos permitieron regenerar ambos CSV.
 
 Los modelos derivan de [pysport/idsse-data](https://huggingface.co/datasets/pysport/idsse-data),
 revisión `a715a38dfbaf5f58e431727c2b78d174101a703c`, CC-BY-4.0 según
@@ -112,9 +126,7 @@ sin leerlos ni borrarlos. `SOURCE-MANIFEST.json` registra los bytes normalizados
 a LF; `PUBLIC-MODEL-MANIFEST.json` identifica el ZIP y su atribución.
 Este constructor no publica ni inicializa un repositorio.
 
-Antes de publicar: verificar instalación, restauración en una raíz nueva,
-generación sin GT, igualdad binaria de dos ejecuciones y validez del CSV;
-comprobar acceso anónimo al repositorio y a los modelos. Mantener el CSV y
-los datos restringidos fuera del repositorio público. La publicación y el
-envío del formulario se realizan tras revisión; este documento no afirma que
-esas acciones ya se hayan completado.
+Se comprobaron restauración, generación sin GT, igualdad binaria, validez del
+CSV y acceso público al código y a los modelos. Mantener el CSV y los datos
+restringidos fuera del repositorio público. El envío del formulario sigue
+siendo una acción separada; este documento no afirma que se haya enviado.

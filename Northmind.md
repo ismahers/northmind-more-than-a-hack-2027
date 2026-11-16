@@ -115,12 +115,19 @@ y CSV válidos. Se verificaron los 66 archivos de la cápsula y ocho pruebas de
 portabilidad. Una copia limpia de fuentes y modelos en otra raíz Windows,
 sin caché target preexistente, repitió la inferencia completa: dos generaciones
 válidas y CSV candidato/reserva idénticos byte a byte a los de la raíz original.
-Se usó el mismo entorno Python 3.13.17; no se afirma una instalación fría ni
-una ejecución Linux.
+Después se repitió con un entorno nuevo aislado Python 3.13.17 en la nueva
+raíz del mismo host Windows: dos generaciones válidas y ambos CSV idénticos
+byte a byte a los originales. La instalación requirió completar ruedas
+oficiales PyPI verificadas de numba, llvmlite y certifi después de fallar la
+orden completa `pip install -r`; `pip check` terminó correctamente. No se
+afirma que esa única orden funcionase, ni una ejecución Linux u otro host.
 Los logs y predicciones no se publican.
 
 Las cápsulas históricas contienen rutas absolutas Windows y fuentes selladas.
 Su restauración resuelve las rutas sin alterar los registros ni aceptar
 cambios de contenido. La prueba en una nueva raíz verifica ese traslado en
-Windows con el entorno existente. Una instalación fría o en otro sistema
-requiere comprobaciones adicionales.
+Windows, también con un entorno nuevo mediante el procedimiento documentado.
+Otro sistema u otro host requiere comprobaciones adicionales. El
+[repositorio público](https://github.com/ismahers/northmind-submission-2027)
+y la [Release de modelos](https://github.com/ismahers/northmind-submission-2027/releases/tag/submission-v1)
+se verificaron mediante acceso anónimo y comprobación SHA-256 del ZIP.
