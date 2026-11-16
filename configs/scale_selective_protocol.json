@@ -1,0 +1,37 @@
+{
+  "version": "scale-selective-v1",
+  "pilots": [0, 6],
+  "seed": 2027,
+  "cpu_threads": 4,
+  "core_frames": 256,
+  "batch_size": 8,
+  "scenarios": ["clean", "missing40_5s", "missing40_15s"],
+  "score_weights": [0.5, 0.25, 0.25],
+  "arms": [
+    "teacher",
+    "local_classification",
+    "multiscale_classification",
+    "scale_selective",
+    "multiseed_scale_selective"
+  ],
+  "obs_window": 9,
+  "pulse_min_frames": 3,
+  "candidate_grid": [
+    {"alpha_long": 0.15, "pulse_max_frames": 28, "pulse_min_conf": 0.25, "pulse_boost": 1.25, "teacher_blend": 0.15, "alt_seed_weight": 0.25},
+    {"alpha_long": 0.20, "pulse_max_frames": 30, "pulse_min_conf": 0.20, "pulse_boost": 1.35, "teacher_blend": 0.20, "alt_seed_weight": 0.30},
+    {"alpha_long": 0.25, "pulse_max_frames": 30, "pulse_min_conf": 0.15, "pulse_boost": 1.45, "teacher_blend": 0.25, "alt_seed_weight": 0.35},
+    {"alpha_long": 0.30, "pulse_max_frames": 30, "pulse_min_conf": 0.10, "pulse_boost": 1.50, "teacher_blend": 0.20, "alt_seed_weight": 0.30},
+    {"alpha_long": 0.10, "pulse_max_frames": 25, "pulse_min_conf": 0.30, "pulse_boost": 1.20, "teacher_blend": 0.10, "alt_seed_weight": 0.20},
+    {"alpha_long": 0.35, "pulse_max_frames": 30, "pulse_min_conf": 0.10, "pulse_boost": 1.60, "teacher_blend": 0.25, "alt_seed_weight": 0.40}
+  ],
+  "promotion": {
+    "robust_gain": 0.01,
+    "short_recall_gain": 0.01,
+    "occlusion_floor_delta": -0.02,
+    "long_recall_floor_delta": -0.03,
+    "false_transitions_per_minute_increase_max": 0.10
+  },
+  "max_compute_seconds": 1800,
+  "official_assets": "No target assets, availability checks, private GT or automatic discovery. Explicit external public paths only."
+}
+

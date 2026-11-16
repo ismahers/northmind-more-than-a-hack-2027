@@ -1,0 +1,26 @@
+{
+  "version": "evidence-first-validation-v1",
+  "folds": [0, 6],
+  "scenarios": ["clean", "missing40_5s", "missing40_15s"],
+  "weights": [0.5, 0.25, 0.25],
+  "cpu_threads": 4,
+  "max_seconds": 1200,
+  "part": "validation",
+  "train": false,
+  "test_access": false,
+  "target_access": false,
+  "parameter_search": false,
+  "views": [[false, false], [false, true], [true, false], [true, true]],
+  "candidate": "align and equally average local, multiscale, primary and alternate conditional logits; then apply sealed per-fold pulse fusion once",
+  "alive": "identical to four-view v2: average each view's sealed multiseed alive probability",
+  "references": ["registered_multiseed", "four_view_v2"],
+  "guardrails": {
+    "robust_delta_min": 0,
+    "clean_delta_min": 0,
+    "short_recall_delta_min": 0,
+    "long_recall_delta_min": -0.01,
+    "macro_f1_delta_min": -0.005
+  },
+  "decision": "require all five gates against BOTH references in BOTH folds; diagnostic only, no automatic promotion",
+  "diagnostics": "pulse frames and short-spell gains/losses versus four-view v2; no post-result tuning"
+}

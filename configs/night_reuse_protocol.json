@@ -1,0 +1,12 @@
+{
+  "version": "night-reuse-v1",
+  "registration_reason": "Additional zero-training comparisons: prior phase3 seed variance and current inner-validation CE/spell mismatch; fixed before inspecting new held-out results",
+  "ensemble_members": [[2027], [2027, 2028], [2027, 2029], [2028, 2029], [2027, 2028, 2029]],
+  "ensemble_weights": "uniform mean of joint H/A/D probabilities, float64 sum then float32 storage",
+  "ensemble_decoder": "phase3 own-fold winner frozen, including priors and strength",
+  "ensemble_selection": "same robust validation objective and fusion/fragmentation/occlusion guards as decoder study",
+  "checkpoint_folds": [0, 6],
+  "checkpoint_candidates": "original cap12 best plus every available saved epoch >=12 on the already early-stopped trajectory; no additional optimization steps",
+  "checkpoint_selection": "maximize robust inner-validation spellF1 with frozen decoder and original-pipeline occlusion floor; contrast against CE checkpoint criterion",
+  "test_policy": "save each own-fold choice before test; evaluate fixed three-seed ensemble and validation-selected subset, never choose seeds/checkpoints on test"
+}

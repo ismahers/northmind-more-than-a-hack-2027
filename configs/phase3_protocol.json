@@ -1,0 +1,32 @@
+{
+  "version": "phase3-v1",
+  "seeds": [2027, 2028, 2029],
+  "epoch_caps": [2, 6, 12],
+  "early_stopping": {"criterion": "inner_validation_masked_loss", "patience": 3, "min_epochs": 6, "min_delta": 0.001},
+  "training_duration_selection": "highest inner-validation argmax spellF1 among best-loss checkpoints within each cap; ties prefer smaller cap",
+  "conditions": ["A_clean", "A_blocks", "B_clean", "B_blocks"],
+  "B_sampling": "50 percent IDSSE windows, 50 percent SkillCorner; same optimizer updates as A",
+  "duration_statistics": "only outer-training IDSSE, excludes edge-censored state runs; H/A durations pooled",
+  "model_selection_score": "0.5 clean validation spellF1 + 0.25 validation 40pct/5s blocks + 0.25 validation 40pct/15s blocks",
+  "corruptions": [
+    {"name": "clean", "fraction": 0.0, "block_seconds": 1.0},
+    {"name": "missing20_1s", "fraction": 0.2, "block_seconds": 1.0},
+    {"name": "missing20_5s", "fraction": 0.2, "block_seconds": 5.0},
+    {"name": "missing20_15s", "fraction": 0.2, "block_seconds": 15.0},
+    {"name": "missing40_1s", "fraction": 0.4, "block_seconds": 1.0},
+    {"name": "missing40_5s", "fraction": 0.4, "block_seconds": 5.0},
+    {"name": "missing40_15s", "fraction": 0.4, "block_seconds": 15.0}
+  ],
+  "training_corruption": {"fraction": 0.4, "block_seconds_choices": [1.0, 5.0, 15.0], "regenerate_each_epoch": true},
+  "decoder_grid": {
+    "smooth_frames": [3, 7, 15],
+    "hmm_strength": [0.25, 0.5, 1.0],
+    "hsmm_strength": [0.25, 0.5, 1.0],
+    "hsmm_boundary_strength": [0.0, 0.5],
+    "hsmm_duration_cap": 300,
+    "hsmm_tail": "unbounded geometric tail; no forced maximum possession length"
+  },
+  "outer_test_policy": "each choice frozen from own inner validation before loading test arrays; no global winner chosen from outer scores",
+  "extra_seeds": "repeat per-fold validation-selected condition and cap; freeze decoder hyperparameters chosen with seed 2027",
+  "uncertainty": "fold mean and sample SD; paired match bootstrap differences; additional seed variation of selected pipeline"
+}

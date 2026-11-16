@@ -1,0 +1,17 @@
+{
+  "version": "oof-case-review-v1",
+  "scenario": "clean",
+  "short_seconds": 3.0,
+  "iou": 0.5,
+  "majority": 0.5,
+  "review_coverage_min": 0.8,
+  "pairs_per_fold_max": 3,
+  "clip_halo_seconds": 2.0,
+  "display_hz": 10,
+  "max_seconds": 180,
+  "neural_training": false,
+  "new_detector_fit": false,
+  "validation_access": false,
+  "test_access": false,
+  "target_access": false
+}

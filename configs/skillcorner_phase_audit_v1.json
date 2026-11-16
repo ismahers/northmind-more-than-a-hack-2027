@@ -1,0 +1,16 @@
+{
+  "version": "skillcorner-phase-label-audit-v1",
+  "inventory": "evaluation/reports/external/skillcorner-audit-v1",
+  "sample_tracking_match": 1874553,
+  "sample_rule": "Smallest numeric configured match ID, chosen before tracking comparison; descriptive only",
+  "max_tracking_bytes": 800000000,
+  "max_seconds": 600,
+  "fps": 10,
+  "endpoint_policy": "Compare duration to exclusive and inclusive endpoints; record both, do not select using prediction scores",
+  "uncovered": "unknown, not dead",
+  "conflict": "unknown and explicitly flagged",
+  "labels": "Provider-derived weak supervision; not independent manually annotated ground truth",
+  "train": false,
+  "test_access": false,
+  "target_access": false
+}

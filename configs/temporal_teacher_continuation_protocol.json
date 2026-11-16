@@ -1,0 +1,9 @@
+{
+  "version": "temporal-teacher-continuation-v1",
+  "parent": "temporal-teachers-v1/registration.json",
+  "trigger": "Parent cumulative wall-clock budget exhausted; a long pause was observed during one completed epoch.",
+  "supplementary_max_compute_seconds": 1800,
+  "recipe": "Continue only unfinished original 12+8 teacher trajectories with their exact optimizer and RNG. Same original frozen code, data, splits, seeds, validation objective and checkpoint registration. No extra epochs or new model conditions.",
+  "outputs": "Only unfinished parent checkpoints and missing own-validation selections. Preserve previous completed artifacts and original compute accounting. Record supplementary compute separately.",
+  "test_used": false
+}

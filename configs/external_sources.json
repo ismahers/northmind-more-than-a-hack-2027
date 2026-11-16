@@ -1,0 +1,17 @@
+{
+  "idsse": {
+    "repo": "pysport/idsse-data",
+    "revision": "a715a38dfbaf5f58e431727c2b78d174101a703c",
+    "license": "CC-BY-4.0",
+    "matches": {
+      "J03WMX": "000001", "J03WN1": "000001", "J03WOH": "000002",
+      "J03WOY": "000002", "J03WPY": "000002", "J03WQQ": "000002", "J03WR9": "000002"
+    }
+  },
+  "skillcorner": {
+    "repo": "SkillCorner/opendata",
+    "revision": "4340d274572876239c154c90bc507a9b3250a656",
+    "license": "MIT; retain provider attribution",
+    "matches": [2017461, 2016236, 2015213, 2013725, 2011166, 2010085, 2007721, 2007448, 2006363, 2006229, 1996435, 1996436, 1986691, 1959846, 1953632, 1927964, 1925299, 1899585, 1886347, 1874553]
+  }
+}

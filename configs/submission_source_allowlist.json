@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "purpose": "Source-only clean export for the Northmind final submission; never copy Git history or target artifacts",
+  "publication": {
+    "owner": "ismahers",
+    "name": "northmind-submission-2027",
+    "visibility": "public",
+    "requires_review_before_publication": true
+  },
+  "files": [
+    "games.py",
+    "LICENSE",
+    "requirements-submission.txt",
+    "evaluation/possession_metrics.py",
+    "evaluation/validate_submission.py",
+    "configs/submission_source_allowlist.json",
+    "tests/test_final_submission.py",
+    "tests/test_submission_portability.py"
+  ],
+  "optional_files": [
+    "evaluation/__init__.py"
+  ],
+  "globs": [
+    "starter/**/*.py",
+    "possession/**/*.py",
+    "scripts/**/*.py",
+    "configs/*.json"
+  ],
+  "document_mappings": {
+    "docs/submission/README.md": "README.md",
+    "docs/submission/Northmind.md": "Northmind.md"
+  },
+  "excluded_prefixes": [
+    ".git/",
+    ".codex/",
+    ".agents/",
+    ".venv/",
+    "_pub/",
+    "data/",
+    "evaluation/gt/",
+    "evaluation/results/",
+    "evaluation/reports/",
+    "docs/history/",
+    "docs/experiments/",
+    "docs/public-results/"
+  ],
+  "excluded_globs": [
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "**/*.log",
+    "**/*.csv",
+    "**/*.npz",
+    "**/*.pt",
+    "**/*.pkl",
+    "**/*.mp4",
+    "**/*.gzip",
+    "**/*.pl3container"
+  ],
+  "artifact_policy": "Publish only the reviewed public model capsule with manifest, SHA-256 and attribution as a separate Release asset; regenerate target cache locally",
+  "validation_policy": "Fail if a required file is missing, a destination collides, a symlink escapes source root, or any selected path matches an exclusion; inspect staged inventory before publication"
+}

@@ -1,0 +1,12 @@
+data/
+evaluation/reports/
+docs/public-results/
+*.csv
+*.npz
+*.pt
+*.log
+*logs/
+.venv/
+venv/
+__pycache__/
+*.py[cod]

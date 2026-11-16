@@ -1,0 +1,13 @@
+{
+  "version": "skillcorner-compatibility-audit-v1",
+  "repository": "SkillCorner/opendata",
+  "branch_to_resolve_once": "master",
+  "reference_config": "configs/external_sources.json",
+  "scope": "Public repository inventory, metadata, licenses and all phases-of-play CSVs; no target or model metrics",
+  "max_file_bytes": 12000000,
+  "max_seconds": 600,
+  "null_or_uncovered_policy": "unknown; never automatically dead",
+  "training_authorized_by_this_audit": false,
+  "test_access": false,
+  "target_access": false
+}

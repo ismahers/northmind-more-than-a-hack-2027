@@ -1,0 +1,58 @@
+{
+  "id": "control-transfer-v1",
+  "synthetic_only": true,
+  "dataset_accessed": false,
+  "real_hypothesis_tested": false,
+  "model_promoted": false,
+  "budget": {"seconds": 30, "threads": 1, "fit": false},
+  "measurement": {
+    "fixed_candidate_slots": ["A", "C", "R"],
+    "distance": "norm(ball_xy - slot_xy)",
+    "relative_velocity": "norm(ball_velocity_xy - slot_velocity_xy)",
+    "native_dt_seconds": 0.04,
+    "native_fixture_hz": 25,
+    "fixture_support_seconds": [-0.76, 1.52],
+    "requested_window_seconds": [-0.6, 1.5],
+    "scan_hz": 10,
+    "scan_rule": "nearest native timestamp; earlier time on ties; keep actual timestamp",
+    "endpoint_tolerance_seconds": 0.02,
+    "trailing_velocity_seconds": 0.12,
+    "velocity_denominator": "actual native elapsed time between selected endpoints",
+    "maximum_gap_native_frames": 1.5,
+    "ball_jump_above_mps": 45,
+    "player_jump_above_mps": 12,
+    "support": "all native intermediate samples finite, observed, same run, strictly increasing time; no interpolation, gap fill or slot reassignment",
+    "invalid": "d/u null with reasons and curve break; whole window unsupported",
+    "identity": "opaque slot only; no person continuity certification"
+  },
+  "descriptive_metrics": {
+    "mean_grid": "all native timestamps in each interval, equal sample weights",
+    "pre_seconds": [-0.6, -0.2],
+    "post_seconds": [0.2, 0.6],
+    "late_seconds": [1, 1.5],
+    "differences": ["post_minus_pre", "late_minus_pre"],
+    "support": "complete requested window and trailing history required",
+    "rankings_weights_semantic_thresholds": false
+  },
+  "fixtures": ["conduction", "long_pass", "layoff", "near_rival", "parallel", "gap_jump"],
+  "gap_fixture_missing_seconds": 0.32,
+  "future_real_proposal_not_executable": {
+    "execute": false,
+    "match_allowlist": ["J03WOH", "J03WOY", "J03WPY"],
+    "budget": {"seconds": 600, "threads": 4},
+    "selection": "For each run, first multiple of 10 seconds with past .6 and future 1.5 inside run, then every 10 seconds. Both candidate teams symmetrically; no H/A or action labels. At most 100 times per match selected before support checks; no replacement after failures.",
+    "cap": "Sort eligible times by (run,time). If N <= 100 retain all; otherwise select indices floor(k*(N-1)/99), k=0..99. No backfill after support failures.",
+    "slots_at_center": "A nearest ball within candidate team; C distinct teammate nearest A; R opposing team nearest ball. Distance ties use stable slot key. Preserve slots for entire window.",
+    "proximity_control": "d_i(t), descriptive baseline only",
+    "uniform_motion_control": "Extrapolate from t with trailing velocities at t, same slots and common native support. Compare later velocity changes relative to pre and d_i(t); not a causal null or semantic validation.",
+    "matching": {
+      "execute": false,
+      "exact": ["match", "candidate_team"],
+      "bins_origin": 0,
+      "bins_rule": "floor(value / width)",
+      "bin_widths": {"d_A_m": 1, "d_C_m": 2, "ball_speed_mps": 2, "A_speed_mps": 1, "C_speed_mps": 1, "u_A_mps": 2, "u_C_mps": 2},
+      "algorithm": "Visit windows chronologically by (run,time), without replacement. Within identical bins select nearest Euclidean initial vector standardized by stated bin widths, different grid times only; distance ties (run,time). Report unmatched; no causal or semantic claim.",
+      "initial_vector": ["d_A", "d_C", "ball_speed", "A_speed", "C_speed", "u_A", "u_C"]
+    }
+  }
+}

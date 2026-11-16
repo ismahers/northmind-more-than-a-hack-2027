@@ -1,0 +1,15 @@
+{
+  "access_status": "Public Release access must be verified before submission",
+  "archive": "northmind-public-experiments-2026-10-28.zip",
+  "attribution": {
+    "dataset": "pysport/idsse-data",
+    "license": "CC-BY-4.0",
+    "revision": "a715a38dfbaf5f58e431727c2b78d174101a703c",
+    "url": "https://huggingface.co/datasets/pysport/idsse-data"
+  },
+  "bytes": 35910601,
+  "file_count": 66,
+  "scope": "Public IDSSE model and experiment dependencies; no target assets or predictions",
+  "sha256": "f09c894ad962364a2a16357749d9de304552532db58bb047f6fd2f9a1ca25162",
+  "url": "https://github.com/ismahers/northmind-submission-2027/releases/download/submission-v1/northmind-public-experiments-2026-10-28.zip"
+}

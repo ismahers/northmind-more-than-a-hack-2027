@@ -1,0 +1,22 @@
+{
+  "version": "hsmm-pilot-v1",
+  "folds": [0, 6],
+  "scenarios": ["clean", "missing40_5s", "missing40_15s"],
+  "weights": [0.5, 0.25, 0.25],
+  "references": ["registered_multiseed", "four_view_v2"],
+  "candidate": "four_view_hsmm",
+  "emission_source": "sealed long-diagnosis-v3 cache p__four_view_v2",
+  "decoder": {"kind": "hsmm", "strength": 0.5, "boundary_strength": 0.0},
+  "control_decoder": {"kind": "hmm", "strength": 0.5, "boundary_strength": 0.0},
+  "duration_cap": 300,
+  "duration_tail": "unbounded geometric; right-censored final segment; minimum one frame",
+  "priors": "fit_priors on four train matches only, same priors for both decoders",
+  "guardrails": {"robust_delta_min": 0, "clean_delta_min": 0, "short_recall_delta_min": 0, "long_recall_delta_min": -0.01, "macro_f1_delta_min": -0.005},
+  "train": false,
+  "test_access": false,
+  "target_access": false,
+  "parameter_search": false,
+  "max_seconds": 1200,
+  "decision": "all five gates against both references in both folds; no per-fold selection; no automatic promotion",
+  "secondary": "global matching at five IoU; long and short gains/losses and false HA transitions; diagnostic only"
+}

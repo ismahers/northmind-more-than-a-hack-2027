@@ -1,0 +1,20 @@
+{
+  "version": "pulse-consensus-validation-v1",
+  "parent": "evidence-first-validation-v1",
+  "candidates": ["half_residual", "boundary_consensus"],
+  "half_residual_weight": 0.5,
+  "boundary_support_min": 3,
+  "boundary_tolerance": "sealed pulse_min_frames (3 at 10Hz)",
+  "overlap_min": 0.5,
+  "folds": [0, 6],
+  "scenarios": ["clean", "missing40_5s", "missing40_15s"],
+  "weights": [0.5, 0.25, 0.25],
+  "references": ["registered_multiseed", "four_view_v2"],
+  "guardrails": {"robust_delta_min": 0, "clean_delta_min": 0, "short_recall_delta_min": 0, "long_recall_delta_min": -0.01, "macro_f1_delta_min": -0.005},
+  "train": false,
+  "test_access": false,
+  "target_access": false,
+  "parameter_search": false,
+  "max_seconds": 1200,
+  "decision": "all five gates against both references in both folds; no per-fold recipe selection, no automatic promotion, no post-result tuning"
+}

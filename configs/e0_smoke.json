@@ -1,0 +1,6 @@
+{
+  "seed": 2027, "fps": 10.0, "core_frames": 32, "batch_size": 2,
+  "epochs": 1, "learning_rate": 0.001, "weight_decay": 0.0001,
+  "spatial_dim": 8, "channels": 8, "dilations": [1, 2],
+  "dropout": 0.1, "accumulation_steps": 1, "amp": false, "device": "cpu"
+}

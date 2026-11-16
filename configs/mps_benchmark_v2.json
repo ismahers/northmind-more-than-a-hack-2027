@@ -1,0 +1,6 @@
+{
+  "extends": "configs/mps_benchmark_v1.json",
+  "version": "mps-benchmark-v2",
+  "gate_policy": "operator_compatibility_with_same_gradient_adamw_control",
+  "rationale": "After preserving the v1 failure, isolate operator correctness from AdamW amplification of backend rounding near epsilon. Retain all original tolerances and report cross-backend post-step failure. Gate optimizer on the same exact gradients on both devices; gate forward/loss/gradient/packing/repeatability as before. Timing only, no claim of equivalent training trajectories."
+}

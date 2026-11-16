@@ -1,0 +1,25 @@
+{
+  "version": "ha-discrimination-v1",
+  "pilots": [0, 6],
+  "parent": "local-head-budget-phase8-v2",
+  "seed": 2027,
+  "cpu_threads": 4,
+  "strong_probability": 0.6,
+  "strong_fraction": 0.5,
+  "proximity_margin_m": 1.0,
+  "proximity_fraction": 0.6,
+  "ball_available_fraction": 0.5,
+  "minimum_conflicting_short_spells_per_validation": 10,
+  "diagnostic_offsets_s": [-1.5,-1.0,-0.5,-0.2,0.0,0.2,0.5,1.0,1.5],
+  "hypothesis_gate": "Both own validations have >=10 missed short spells with majority-wrong conditional HA emissions, observed ball >=50%, and correct-team proximity advantage>=1m in >=60% observed frames. Operational association only; no claim geometry necessarily helps. Test never chooses the hypothesis.",
+  "pilot": {
+    "epochs": 8,
+    "arms": ["original", "geometry", "capacity"],
+    "geometry_dimensions": 20,
+    "capacity_width": 83,
+    "feature_context": "Backward-only differences0.1/0.5s, no run/gap crossing, entirely within existing teacher +/-1.5s context. No identities, labels or events as inputs.",
+    "selection": "Existing promotion versus original8 and teacher, robust gain>=.005 and short recall gain>=.01, same occlusion/long/false-possession/fragmentation guards; direct HA false transition increase<=.1/min. Geometry must additionally beat capacity control by>=.005 robust in BOTH own validations. Both selections sealed before new pilot test inference. One fixed recipe, no search and no expansion."
+  },
+  "max_compute_seconds": 1800,
+  "official_assets": "Prohibited, including availability checks. Only existing explicit public IDSSE and external experiment artifacts. Historical sources/artifacts read-only."
+}

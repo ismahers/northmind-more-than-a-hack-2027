@@ -1,0 +1,23 @@
+{
+  "version": "long-diagnosis-v3",
+  "folds": [0, 6],
+  "part": "validation",
+  "scenarios": ["clean", "missing40_5s", "missing40_15s"],
+  "references": ["registered_multiseed", "four_view_v2"],
+  "systems": ["registered_multiseed", "four_view_v2", "evidence_first", "half_residual", "boundary_consensus"],
+  "ious": [0.3, 0.4, 0.5, 0.6, 0.7],
+  "long_seconds": 10,
+  "short_seconds": 3,
+  "fps": 25,
+  "repairs": ["boundaries", "team", "fragmentation", "D", "combined"],
+  "joint_groups": ["all_long", "missed_long_at_0.5"],
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261028,
+  "uncertainty": "paired match bootstrap; identical sampled folds for all systems/scenarios; only two matches, descriptive and low precision",
+  "train": false,
+  "test_access": false,
+  "target_access": false,
+  "parameter_search": false,
+  "cpu_threads": 4,
+  "max_seconds": 3600
+}

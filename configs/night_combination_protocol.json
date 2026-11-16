@@ -1,0 +1,10 @@
+{
+  "version": "night-combination-v1",
+  "registration": "registered before inspecting new held-out results; no fresh hyperparameter search",
+  "variants": ["original", "decoder", "ensemble", "both"],
+  "decoder": "frozen own-validation winner of the 52-candidate single-model search",
+  "ensemble": "frozen own-validation selected subset of existing seeds",
+  "selection": "same own-match weighted score and fusion/fragmentation/occlusion guards; ties retain earlier simpler variant",
+  "integrated": "compare combination winner against validation-selected saved-checkpoint criterion on predeclared folds0/6 only; ties retain combined; report separately from uniform seven-fold frozen-weight comparison",
+  "test_policy": "freeze combination and integrated choices from validation JSONs before reading their test rows"
+}

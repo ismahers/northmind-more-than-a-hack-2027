@@ -1,0 +1,17 @@
+{
+  "version": "football-mechanism-v1",
+  "folds": [0, 6],
+  "scenarios": ["clean", "missing40_5s", "missing40_15s"],
+  "weights": [0.5, 0.25, 0.25],
+  "boundary_radius_s": 1.0,
+  "short_spell_s": 3.0,
+  "probability_clip": 1e-7,
+  "minimum_bce_gain": 0.001,
+  "max_seconds": 300,
+  "fit": false,
+  "weight_search": false,
+  "raw_data_access": false,
+  "test_access": false,
+  "target_access": false,
+  "promotion": false
+}

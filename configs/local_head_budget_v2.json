@@ -1,0 +1,6 @@
+{
+  "extends": "configs/local_head_budget_v1.json",
+  "version": "local-head-budget-phase8-v2",
+  "deterministic_algorithms": true,
+  "verification_against_first_run": "Repeat from the same original8 checkpoints with torch.use_deterministic_algorithms(True) explicit; require identical model/optimizer/RNG at all caps and identical predictions to v1. No scientific hyperparameter, selection threshold or dataset change."
+}

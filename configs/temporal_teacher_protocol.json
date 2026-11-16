@@ -1,0 +1,9 @@
+{
+  "version": "temporal-teachers-v1",
+  "recipe": "configs/phase8_protocol.json, ST IDSSE-only, fixed 12+8 epochs",
+  "pilots": [0, 6],
+  "seeds": [2027, 2028],
+  "selection": "Own validation robust spellF1 with fixed HMM strength 0.5; stable seed order breaks ties. No candidate calibrator or adaptive decoder search. Not exact Phase8 reproduction.",
+  "bootstrap_max_compute_seconds": 3600,
+  "test": "No test export or scoring during teacher bootstrap; four disjoint train matches per fold"
+}

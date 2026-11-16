@@ -1,0 +1,59 @@
+{
+  "id": "control-transfer-geometry-v1",
+  "matches": ["idsse:DFL-MAT-J03WOH", "idsse:DFL-MAT-J03WOY", "idsse:DFL-MAT-J03WPY"],
+  "role": "intersection of historical train folds 0 and 6; reused exploratory development",
+  "source": {"provider": "idsse", "repo": "pysport/idsse-data", "revision": "a715a38dfbaf5f58e431727c2b78d174101a703c", "license": "CC-BY-4.0"},
+  "budget": {"seconds": 600, "threads": 4},
+  "flags": {"geometry_only": true, "labels_read": false, "target_accessed": false, "validation_accessed": false, "test_accessed": false, "model_trained": false, "new_inference": false, "semantic_hypothesis_tested": false, "promoted": false},
+  "max_centers_per_match": 100,
+  "native_hz": 25,
+  "measurement": {
+    "fixed_candidate_slots": ["A", "C", "R"],
+    "distance": "norm(ball_xy - slot_xy)",
+    "relative_velocity": "norm(ball_velocity_xy - slot_velocity_xy)",
+    "requested_window_seconds": [-0.6, 1.5],
+    "scan_hz": 10,
+    "scan_rule": "nearest native timestamp; earlier time on ties; keep actual timestamp",
+    "endpoint_tolerance_seconds": 0.02,
+    "trailing_velocity_seconds": 0.12,
+    "velocity_denominator": "actual native elapsed time between selected endpoints",
+    "maximum_gap_native_frames": 1.5,
+    "ball_jump_above_mps": 45,
+    "player_jump_above_mps": 12,
+    "support": "all native intermediate samples finite, available, same run, strictly increasing time; known-undetected excluded; unknown detection allowed and counted; no interpolation, gap fill or slot reassignment",
+    "invalid": "whole window unsupported; no distance/velocity imputation",
+    "identity": "opaque slot only; no person continuity certification"
+  },
+  "descriptive_metrics": {
+    "mean_grid": "all native timestamps in each interval, equal sample weights",
+    "pre_seconds": [-0.6, -0.2], "post_seconds": [0.2, 0.6], "late_seconds": [1.0, 1.5],
+    "differences": ["post_minus_pre", "late_minus_pre"],
+    "support": "complete requested window and trailing history; controls use exact same support",
+    "rankings_weights_semantic_thresholds": false,
+    "publication": "counts, median, q25, q75; no individual curves, coordinates, times or records"
+  },
+  "selection": {
+    "grid_seconds": 10,
+    "eligible": "multiples of 10 seconds of clock within each run with [-0.6,+1.5] inside same run; sort (run,nominal_time) before support checks",
+    "cap": "N<=100 retain all; otherwise indices floor(k*(N-1)/99), k=0..99; no backfill",
+    "effective_center": "native timestamp closest to nominal grid, earlier on ties, tolerance 0.02 seconds",
+    "both_teams": true,
+    "candidates": "A nearest ball within candidate team; C distinct teammate nearest A at center; R opposing player nearest ball; stable slot index ties; no future or H/A selection",
+    "independence": "one center gives two candidate sets, not independent replicas"
+  },
+  "controls": {
+    "initial_proximity": "d_A(t), d_C(t), d_R(t) without future motion",
+    "uniform_motion": "same fixed candidates and ball extrapolated from effective center with trailing velocities at center; evaluate on exact observed native support; report observed-minus-extrapolated changes; no causal interpretation",
+    "matching": {
+      "exact": ["match", "candidate_team"], "bins_origin": 0,
+      "bins_rule": "floor(value/width)",
+      "initial_vector": ["d_A", "d_C", "ball_speed", "A_speed", "C_speed", "u_A", "u_C"],
+      "bin_widths": [1, 2, 2, 1, 1, 2, 2],
+      "algorithm": "visit chronologically (run,time); same bins; nearest Euclidean standardized initial vector; distinct centers; ties (run,time); no replacement; count unmatched; never relax bins",
+      "contrasts": "post-minus-pre and late-minus-pre differences, signed chronological later-minus-earlier and absolute, exact common support; no p-values"
+    }
+  },
+  "stopping": ["inventory incompatible", "label read required", "zero support for a match", "600 seconds exhausted"],
+  "future": {"training": false, "inference": false, "oof": false, "calibration": false, "validation": false, "test": false, "target": false, "private_ground_truth": false, "new_video": false, "models": false, "parameter_search": false, "semantic_gate": false},
+  "portability": "public original IDSSE datasets required externally; no redistribution of datasets, no new models or caches; local installation/environment still required"
+}

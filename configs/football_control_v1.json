@@ -1,0 +1,20 @@
+{
+  "version": "football-control-v1",
+  "matches": ["idsse:DFL-MAT-J03WOH", "idsse:DFL-MAT-J03WOY", "idsse:DFL-MAT-J03WPY"],
+  "role": "intersection of historical train folds 0 and 6",
+  "lag_seconds": [0.12, 0.24],
+  "max_player_speed_mps": 12.0,
+  "max_ball_speed_mps": 45.0,
+  "deceleration_epsilon_mps2": 0.5,
+  "near_m": 3.0,
+  "far_m": 6.0,
+  "max_seconds": 600,
+  "min_ball_velocity_coverage": 0.5,
+  "min_near_relative_velocity_coverage": 0.5,
+  "labels_access": false,
+  "validation_access": false,
+  "test_access": false,
+  "target_access": false,
+  "fit_model": false,
+  "parameter_search": false
+}

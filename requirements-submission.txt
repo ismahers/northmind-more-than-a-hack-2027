@@ -1,0 +1,7 @@
+# Verified local runtime: Python 3.13.17, CPU inference.
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy==2.2.6
+pandas==2.2.3
+torch==2.10.0+cpu
+python-dateutil==3.0.0
+six==1.17.0
