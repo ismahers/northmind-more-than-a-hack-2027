@@ -45,6 +45,14 @@ revisión `a715a38dfbaf5f58e431727c2b78d174101a703c`, declarada CC-BY-4.0 en
 de artefactos. El código del repositorio mantiene su licencia MIT; esa licencia
 no sustituye las condiciones de los datos ni las atribuciones de los modelos.
 
+El corpus IDSSE disponible comprende siete partidos: J03WMX, J03WN1, J03WOH,
+J03WOY, J03WPY, J03WQQ y J03WR9. Se utilizan las particiones de entrenamiento
+y validación registradas para folds 0/6; los siete partidos no se presentan
+como un único conjunto de entrenamiento. Las anotaciones son las distribuidas
+por el proveedor del dataset; Northmind no añadió etiquetas humanas propias.
+La revisión fija y los registros de los modelos conservan las particiones exactas;
+no se verificó independientemente la identidad de cada anotador del proveedor.
+
 No se utiliza el GT privado ni otra fuente de posesión corregida de BAR–ATH.
 No se crean etiquetas humanas de BAR–ATH para producir el CSV.
 Vídeo, homografía y pose no forman parte de la inferencia final. La auditoría
