@@ -10,6 +10,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LOGS = ROOT / "evaluation" / "reports" / "local-logs"
 TASKS = {
+    "test-live-ball-candidate": ("from scripts.live_ball_candidate import tests; raise SystemExit(tests())", ()),
+    "prepare-live-ball-candidate": ("from scripts.live_ball_candidate import prepare; raise SystemExit(prepare())", ()),
+    "verify-live-ball-candidate": ("from scripts.live_ball_candidate import verify; raise SystemExit(verify())", ()),
+    "test-live-ball": ("from scripts.live_ball import tests; raise SystemExit(tests())", ()),
+    "run-live-ball": ("from scripts.live_ball import run; raise SystemExit(run())", ()),
+    "verify-live-ball": ("from scripts.live_ball import verify; raise SystemExit(verify())", ()),
+    "export-live-ball": ("from scripts.live_ball import export; raise SystemExit(export())", ()),
+    "test-control-memory": ("from scripts.control_memory import tests; raise SystemExit(tests())", ()),
+    "run-control-memory": ("from scripts.control_memory import run; raise SystemExit(run())", ()),
+    "verify-control-memory": ("from scripts.control_memory import verify; raise SystemExit(verify())", ()),
+    "export-control-memory": ("from scripts.control_memory import export; raise SystemExit(export())", ()),
     "complete-submission-certifi": ("from scripts.clean_submission_install import complete_certifi_public_wheel; raise SystemExit(complete_certifi_public_wheel())", ()),
     "complete-submission-public-wheels": ("from scripts.clean_submission_install import complete_public_wheels; raise SystemExit(complete_public_wheels())", ()),
     "complete-submission-install": ("from scripts.clean_submission_install import complete; raise SystemExit(complete())", ()),
@@ -232,9 +243,9 @@ def run_task(task, extra_args=()):
                 cwd=str(ROOT), stdin=subprocess.DEVNULL,
                 stdout=log, stderr=log,
                 creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
-                timeout=2400 if task == "prepare-final-submission" else 600 if task in {"run-pass-coordination", "run-control-transfer-geometry", "verify-control-transfer-geometry"} else 30 if task in {"build-actor-continuity-view", "test-control-transfer", "test-control-transfer-geometry"} else 120 if task in {"build-pass-coordination-view", "build-pass-coordination-contrast"} else None,
+                timeout=3660 if task in {"run-control-memory", "run-live-ball"} else 2400 if task in {"prepare-final-submission", "prepare-live-ball-candidate"} else 600 if task in {"run-pass-coordination", "run-control-transfer-geometry", "verify-control-transfer-geometry"} else 30 if task in {"build-actor-continuity-view", "test-control-transfer", "test-control-transfer-geometry"} else 120 if task in {"build-pass-coordination-view", "build-pass-coordination-contrast", "test-control-memory", "verify-control-memory", "export-control-memory", "test-live-ball", "verify-live-ball", "export-live-ball", "test-live-ball-candidate", "verify-live-ball-candidate"} else None,
                 env={**os.environ, "OMP_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4",
-                     "MKL_NUM_THREADS": "4", "NUMEXPR_NUM_THREADS": "4"} if task in {"run-pass-coordination", "run-control-transfer-geometry", "test-control-transfer-geometry", "verify-control-transfer-geometry"} else None,
+                     "MKL_NUM_THREADS": "4", "NUMEXPR_NUM_THREADS": "4"} if task in {"run-pass-coordination", "run-control-transfer-geometry", "test-control-transfer-geometry", "verify-control-transfer-geometry", "run-control-memory", "test-control-memory", "verify-control-memory", "export-control-memory", "run-live-ball", "test-live-ball", "verify-live-ball", "export-live-ball", "test-live-ball-candidate", "prepare-live-ball-candidate", "verify-live-ball-candidate"} else None,
                 check=False,
             )
         success = process.returncode == 0

@@ -1,0 +1,39 @@
+{
+  "version": "control-memory-validation-v1",
+  "part": "validation",
+  "folds": [0, 6],
+  "scenarios": ["clean", "missing40_5s", "missing40_15s"],
+  "weights": [0.5, 0.25, 0.25],
+  "views": [[false, false], [false, true], [true, false], [true, true]],
+  "neutral_tagging": true,
+  "fps": 25.0,
+  "cpu_threads": 4,
+  "max_seconds": 3600,
+  "train": false,
+  "test_access": false,
+  "target_access": false,
+  "parameter_search": false,
+  "memory_weight": 0.15,
+  "weak_strength_threshold": 0.25,
+  "memory_smoothing": "within_predicted_live_spans",
+  "memory": {
+    "fps": 25.0,
+    "speed_lag_s": 0.12,
+    "max_distance_m": 1.8,
+    "max_speed_m_s": 5.5,
+    "min_rival_margin_m": 0.75,
+    "confirmation_s": 0.20,
+    "memory_horizon_s": 2.0,
+    "max_gap_frames": 1.5
+  },
+  "guardrails": {
+    "robust_delta_min": 0.005,
+    "clean_delta_min": 0.0,
+    "short_recall_delta_min": 0.0,
+    "long_recall_delta_min": -0.01,
+    "macro_f1_delta_min": -0.005,
+    "false_transitions_delta_max": 0.0
+  },
+  "scope": "Exploratory IDSSE validation ablation with neutral tactical priors; not end-to-end validation of the target submission",
+  "decision": "No automatic promotion; one frozen hypothesis, no second tuning attempt after metrics"
+}

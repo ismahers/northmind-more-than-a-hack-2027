@@ -1,0 +1,174 @@
+{
+  "automatic_promotion": false,
+  "folds": {
+    "0": {
+      "baseline_parity": true,
+      "gates": {
+        "checks": {
+          "clean": true,
+          "false_HA": true,
+          "long": true,
+          "macro": true,
+          "robust": true,
+          "short": false
+        },
+        "passed": false,
+        "robust_delta": 0.05628334839410193
+      },
+      "identity_parity": true,
+      "metrics": {
+        "baseline": {
+          "clean": {
+            "false_transitions_per_minute": 0.8378175873578095,
+            "long_recall": 0.9555555555555556,
+            "macroF1": 0.8732137270389578,
+            "short_recall": 0.14084507042253522,
+            "spellF1": 0.5255150554675119
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.4904298072338397,
+            "long_recall": 0.6111111111111112,
+            "macroF1": 0.6984787876828765,
+            "short_recall": 0.08450704225352113,
+            "spellF1": 0.36248108925869893
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.5517335331380697,
+            "long_recall": 0.4666666666666667,
+            "macroF1": 0.6992603656957345,
+            "short_recall": 0.09859154929577464,
+            "spellF1": 0.26083052749719415
+          }
+        },
+        "live_ball": {
+          "clean": {
+            "false_transitions_per_minute": 0.7356447108507596,
+            "long_recall": 0.9555555555555556,
+            "macroF1": 0.8877661912643848,
+            "short_recall": 0.13380281690140844,
+            "spellF1": 0.5307692307692308
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.7356447108507596,
+            "long_recall": 0.7666666666666667,
+            "macroF1": 0.8004894999118245,
+            "short_recall": 0.09154929577464789,
+            "spellF1": 0.4241435562805872
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.7356447108507596,
+            "long_recall": 0.8333333333333334,
+            "macroF1": 0.8080460953972777,
+            "short_recall": 0.06338028169014084,
+            "spellF1": 0.4137931034482759
+          }
+        }
+      }
+    },
+    "6": {
+      "baseline_parity": true,
+      "gates": {
+        "checks": {
+          "clean": true,
+          "false_HA": true,
+          "long": true,
+          "macro": true,
+          "robust": true,
+          "short": true
+        },
+        "passed": true,
+        "robust_delta": 0.09142209638503485
+      },
+      "identity_parity": true,
+      "metrics": {
+        "baseline": {
+          "clean": {
+            "false_transitions_per_minute": 1.1696933506621237,
+            "long_recall": 0.8545454545454545,
+            "macroF1": 0.8337759909085292,
+            "short_recall": 0.12903225806451613,
+            "spellF1": 0.529639889196676
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.7692577891741894,
+            "long_recall": 0.5909090909090909,
+            "macroF1": 0.6629236509371907,
+            "short_recall": 0.08387096774193549,
+            "spellF1": 0.36445698166431595
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.8640977905792264,
+            "long_recall": 0.5454545454545454,
+            "macroF1": 0.6717036570924756,
+            "short_recall": 0.07741935483870968,
+            "spellF1": 0.29064748201438845
+          }
+        },
+        "live_ball": {
+          "clean": {
+            "false_transitions_per_minute": 0.9800133478520495,
+            "long_recall": 0.8818181818181818,
+            "macroF1": 0.8895973510141727,
+            "short_recall": 0.14193548387096774,
+            "spellF1": 0.5784172661870504
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.8851733464470125,
+            "long_recall": 0.8,
+            "macroF1": 0.805082574194152,
+            "short_recall": 0.07741935483870968,
+            "spellF1": 0.4666666666666666
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.8219466788436545,
+            "long_recall": 0.7727272727272727,
+            "macroF1": 0.8192823608999125,
+            "short_recall": 0.07096774193548387,
+            "spellF1": 0.4565714285714286
+          }
+        }
+      }
+    }
+  },
+  "full_target_recipe": false,
+  "memory_used": false,
+  "passes_both": false,
+  "registration_sha256": "82a866b73e50155cab3413277c4bec86151617cc510fce847be90f9507254d88",
+  "schema_version": 1,
+  "scope": "external_seen_validation_learned_live_neutral_tag_ablation",
+  "transition_prior_fit_on_fold_train_only": true,
+  "transition_priors": {
+    "0": {
+      "state_order": [
+        "D",
+        "L"
+      ],
+      "transition_probabilities": [
+        [
+          0.9960274147713305,
+          0.003972585228669479
+        ],
+        [
+          0.0032637075718015664,
+          0.9967362924281984
+        ]
+      ]
+    },
+    "6": {
+      "state_order": [
+        "D",
+        "L"
+      ],
+      "transition_probabilities": [
+        [
+          0.9961869242116396,
+          0.0038130757883603774
+        ],
+        [
+          0.0034809887685687685,
+          0.9965190112314313
+        ]
+      ]
+    }
+  }
+}

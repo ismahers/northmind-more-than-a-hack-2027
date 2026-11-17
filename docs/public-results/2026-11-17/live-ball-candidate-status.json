@@ -1,0 +1,11 @@
+{
+  "anchor_roundtrip": true,
+  "candidate_exists": true,
+  "legacy_baseline_parity": true,
+  "original_unchanged": true,
+  "phase": "complete",
+  "reproducible": true,
+  "selected_for_submission": false,
+  "validated": true,
+  "validation_gates_passed": false
+}
