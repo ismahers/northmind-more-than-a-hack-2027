@@ -375,8 +375,8 @@
     {
       "path": "docs/submission/PDF.md",
       "source": "docs/submission/PDF.md",
-      "bytes": 1663,
-      "sha256": "c13c920050847967418026d10623e5624bc99b3821540cc61ae45df2428ab241"
+      "bytes": 1762,
+      "sha256": "c71b65bd0217086365e0af1572993b34d73d6271fb3181465b88d2567dac00cc"
     },
     {
       "bytes": 33370,
@@ -393,8 +393,8 @@
     {
       "path": "EXPERIMENTAL.md",
       "source": "EXPERIMENTAL.md",
-      "bytes": 4224,
-      "sha256": "18aecf634a341656374eda9b2b0da4d27c817e39c9ae1d6c844236a23c3a2b08"
+      "bytes": 4488,
+      "sha256": "94c43c3e5c94a0a95167f485e1f377faf18418e487e75faa0decf394c88a1fd4"
     },
     {
       "bytes": 10301,
@@ -417,8 +417,8 @@
     {
       "path": "PDF-BUILD.md",
       "source": "docs/submission/PDF.md",
-      "bytes": 1663,
-      "sha256": "c13c920050847967418026d10623e5624bc99b3821540cc61ae45df2428ab241"
+      "bytes": 1762,
+      "sha256": "c71b65bd0217086365e0af1572993b34d73d6271fb3181465b88d2567dac00cc"
     },
     {
       "bytes": 83,
@@ -1291,9 +1291,9 @@
       "source": "possession/transfer_validation.py"
     },
     {
-      "bytes": 7922,
+      "bytes": 8454,
       "path": "README.md",
-      "sha256": "46015a3e53d40ef03e43f8feaa6a345eaf8c4ec9896c169af9032a5fd8c0c5e0",
+      "sha256": "b2af53558ad9ef1623eea9a99ab65ee360a3231f1e9a6ccc23b12b709b44a462",
       "source": "docs/submission/README.md"
     },
     {
@@ -2027,6 +2027,12 @@
       "path": "tests/test_submission_portability.py",
       "sha256": "961b099dd3d7bdce42b4cb0ce3f747db3fd38c46424c5d95864ce7f55ee09290",
       "source": "tests/test_submission_portability.py"
+    },
+    {
+      "path": "PUBLIC-DELIVERY-MANIFEST.json",
+      "source": "PUBLIC-DELIVERY-MANIFEST.json",
+      "bytes": 847,
+      "sha256": "478b1a1c2dab30d56a57fa0f8e8c66d8e3c7a42854ebb0399f981538e2b3367c"
     }
   ],
   "hash_scope": "LF normalized source bytes",

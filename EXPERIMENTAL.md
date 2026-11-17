@@ -1,6 +1,6 @@
 # Reviewed experiments and unchanged submission
 
-The selected recipe remains `northmind_sequence`. The 17 November control-memory and learned-live pilots are experimental, and neither passed all predeclared promotion gates. The separate learned-live target CSV is unselected; the original delivery CSV was preserved. This source overlay does not select, deploy or submit it.
+The selected recipe remains `northmind_sequence`. The 17 November control-memory and learned-live pilots are experimental, and neither passed all predeclared promotion gates. The separate learned-live target CSV is unselected; the original delivery CSV was preserved. This public package does not select, deploy or submit it.
 
 ## Public external results
 
@@ -20,10 +20,10 @@ Successful local checks do not establish cold reproducibility from this checkout
 
 ## Revised English technical report
 
-`Northmind.md` and `docs/submission/Northmind.en.md` contain the revised English report source. It describes the unchanged selected recipe and clarifies its missing-observation D fallback. `PDF-BUILD.md` and `docs/submission/PDF.md` document the build. The revised PDF was rendered as four A4 pages and all pages were visually checked. This source overlay publishes source only: the historical Release PDF binary has not been replaced, and the old download link identifies that historical artifact.
+`Northmind.md` and `docs/submission/Northmind.en.md` contain the revised English report source. It describes the unchanged selected recipe and clarifies its missing-observation D fallback. `PDF-BUILD.md` and `docs/submission/PDF.md` document the build. The revised PDF was rendered as four A4 pages and all pages were visually checked. The reviewed final binary is now included at the repository root: [Northmind.pdf](https://github.com/ismahers/northmind-more-than-a-hack-2027/raw/refs/heads/main/Northmind.pdf). Its exact bytes and SHA-256 are recorded in `PUBLIC-DELIVERY-MANIFEST.json`. The PDF in the historical `submission-v1` Release has not been replaced; use the current root PDF.
 
-`SOURCE-MANIFEST.json` records LF-normalized UTF-8 source bytes for the proposed public tree while preserving unaffected entries. It is an inventory, not a new cold-replay certificate. No restricted target output is included.
+`SOURCE-MANIFEST.json` records LF-normalized UTF-8 source bytes for this public tree while preserving unaffected entries. The binary PDF is inventoried separately in `PUBLIC-DELIVERY-MANIFEST.json`. These are inventories, not new cold-replay certificates. No restricted target output is included.
 
-## Applying this source overlay
+## Final public package
 
-The archive contains 34 explicitly reviewed paths, intended as an overlay on public commit `8e5e3756d8d0f5554f50f1b8d775ccdcb5ed1448`. Unaffected manifest entries refer to files already present in that base checkout. GitHub issue and blob creation were rejected with HTTP 403 (resource not accessible by integration); no issue, branch or pull request was created, and main was not changed.
+The reviewed experiment sources, protocols and public aggregates are included in this repository. The final delivery adds the reviewed PDF without changing the selected recipe, the eight original checkpoints or their authoritative public model capsule in `PUBLIC-MODEL-MANIFEST.json`. The selected CSV remains a separate private form attachment; no target assets or predictions are distributed here.

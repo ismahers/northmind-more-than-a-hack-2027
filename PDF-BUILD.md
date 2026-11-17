@@ -25,8 +25,9 @@ saved fallback CSV is geometric. No algorithm or prediction has been changed.
 Review on 17 November also clarified the observation-missing D fallback and
 separated the new external pilot results from the unchanged submitted recipe.
 The revised document was regenerated and all four pages visually checked again.
-The download below identifies the historical Release asset; this review does
-not claim that the revised PDF has replaced that asset. Build from the current
-English source for the revised document.
+The reviewed final PDF is included at the repository root as `Northmind.pdf`.
+`PUBLIC-DELIVERY-MANIFEST.json` records its exact binary size and SHA-256.
+The `submission-v1` Release PDF is historical and has not been replaced; use
+the canonical download below for the current document.
 
-Download: https://github.com/ismahers/northmind-submission-2027/releases/download/submission-v1/Northmind.pdf
+Download: [Northmind.pdf](https://github.com/ismahers/northmind-more-than-a-hack-2027/raw/refs/heads/main/Northmind.pdf)
