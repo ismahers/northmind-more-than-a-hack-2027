@@ -1,9 +1,13 @@
 # Northmind: reproducción de la entrega
 
-16 de noviembre de 2026. Documento técnico: [Northmind.md](Northmind.md).
+17 de noviembre de 2026. **Documento técnico final: [Northmind.pdf](Northmind.pdf)**
+(inglés, cuatro páginas A4). Fuente editable: [Northmind.md](Northmind.md).
+La receta seleccionada sigue siendo `northmind_sequence`; los pilotos del
+17 de noviembre son experimentales y no están seleccionados. Véase
+[EXPERIMENTAL.md](EXPERIMENTAL.md).
 
 Este paquete contiene las fuentes de la receta de inferencia BAR–ATH. La
-publicación está en [ismahers/northmind-submission-2027](https://github.com/ismahers/northmind-submission-2027),
+publicación está en [ismahers/northmind-more-than-a-hack-2027](https://github.com/ismahers/northmind-more-than-a-hack-2027),
 un repositorio nuevo con historia limpia. El fork de investigación permanece
 separado. Se verificaron el acceso anónimo al código y al ZIP de modelos,
 así como el SHA-256 del ZIP descargado públicamente.
@@ -124,11 +128,13 @@ una entrega anterior. `refresh-submission-source` actualiza exclusivamente las
 fuentes permitidas y los manifiestos de esa copia; conserva los demás archivos
 sin leerlos ni borrarlos. `SOURCE-MANIFEST.json` registra los bytes normalizados
 a LF; `PUBLIC-MODEL-MANIFEST.json` identifica el ZIP y su atribución.
-Este constructor no publica ni inicializa un repositorio.
+`PUBLIC-DELIVERY-MANIFEST.json` registra por separado los bytes exactos y el
+SHA-256 del PDF final incluido en la raíz; no aplica normalización de texto
+al binario. Este constructor no publica ni inicializa un repositorio.
 
 Se comprobaron restauración, generación sin GT, igualdad binaria, validez del
 CSV y acceso público al código y a los modelos. Mantener el CSV y los datos
 restringidos fuera del repositorio público. El envío del formulario sigue
 siendo una acción separada; este documento no afirma que se haya enviado.
 
-English technical report: [download Northmind.pdf](https://github.com/ismahers/northmind-submission-2027/releases/download/submission-v1/Northmind.pdf). Editable English source: [Northmind.md](Northmind.md); PDF build instructions: [PDF-BUILD.md](PDF-BUILD.md).
+English technical report: [download the final Northmind.pdf](https://github.com/ismahers/northmind-more-than-a-hack-2027/raw/refs/heads/main/Northmind.pdf). Editable English source: [Northmind.md](Northmind.md); PDF build instructions: [PDF-BUILD.md](PDF-BUILD.md). The PDF in the historical `submission-v1` Release remains a historical artifact.

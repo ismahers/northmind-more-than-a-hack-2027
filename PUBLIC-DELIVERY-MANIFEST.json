@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "selected_recipe": "northmind_sequence",
+  "experimental_pilots_selected": false,
+  "artifacts": [
+    {
+      "path": "Northmind.pdf",
+      "media_type": "application/pdf",
+      "scope": "Own public technical report; no target assets or predictions",
+      "hash_scope": "Exact binary bytes",
+      "bytes": 92918,
+      "sha256": "fd092f69210c976a9c589e942db104f867ef184e2d0298b56220d9b9b21fb19b",
+      "url": "https://github.com/ismahers/northmind-more-than-a-hack-2027/raw/refs/heads/main/Northmind.pdf"
+    }
+  ],
+  "model_capsule": {
+    "manifest": "PUBLIC-MODEL-MANIFEST.json",
+    "status": "Unchanged authoritative eight-checkpoint capsule",
+    "archive": "northmind-public-experiments-2026-10-28.zip",
+    "bytes": 35910601,
+    "sha256": "f09c894ad962364a2a16357749d9de304552532db58bb047f6fd2f9a1ca25162"
+  }
+}
