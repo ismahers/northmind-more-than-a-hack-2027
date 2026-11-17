@@ -7,12 +7,6 @@
       "source": "LICENSE"
     },
     {
-      "bytes": 8574,
-      "path": "Northmind.md",
-      "sha256": "4c7cc6c5895cbb59be7d1c369136bbf6cbaa080f15055370e28a1276b6de35da",
-      "source": "docs/submission/Northmind.md"
-    },
-    {
       "bytes": 7659,
       "path": "README.md",
       "sha256": "e119f1eec2ceaee218b95d806d57ae98e0d1f56d10f54d16cbb87f5dcb4319e3",
@@ -1841,6 +1835,24 @@
       "path": "tests/test_submission_portability.py",
       "sha256": "961b099dd3d7bdce42b4cb0ce3f747db3fd38c46424c5d95864ce7f55ee09290",
       "source": "tests/test_submission_portability.py"
+    },
+    {
+      "path": "Northmind.md",
+      "source": "docs/submission/Northmind.en.md",
+      "bytes": 10399,
+      "sha256": "aec19b7f5909f0243bdb4e6ed47258b32411620cb8a19f56c230c3b62a98e09f"
+    },
+    {
+      "path": "scripts/build_technical_pdf.py",
+      "source": "scripts/build_technical_pdf.py",
+      "bytes": 7582,
+      "sha256": "5986b40114474231c247dec5a6687ee525b7ce2a85479c3fce0f849c41bfe2ac"
+    },
+    {
+      "path": "PDF-BUILD.md",
+      "source": "docs/submission/PDF.md",
+      "bytes": 1257,
+      "sha256": "e0bba4c959f06bcaf507450f0ac01e93986df0ed65952d04ccfb6155058db8a1"
     }
   ],
   "hash_scope": "LF normalized source bytes",

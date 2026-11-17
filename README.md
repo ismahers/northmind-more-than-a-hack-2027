@@ -130,3 +130,5 @@ Se comprobaron restauración, generación sin GT, igualdad binaria, validez del
 CSV y acceso público al código y a los modelos. Mantener el CSV y los datos
 restringidos fuera del repositorio público. El envío del formulario sigue
 siendo una acción separada; este documento no afirma que se haya enviado.
+
+English technical report: [download Northmind.pdf](https://github.com/ismahers/northmind-submission-2027/releases/download/submission-v1/Northmind.pdf). Editable English source: [Northmind.md](Northmind.md); PDF build instructions: [PDF-BUILD.md](PDF-BUILD.md).
