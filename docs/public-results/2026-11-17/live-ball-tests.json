@@ -1,0 +1,17 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "python": "3.13.17",
+  "skipped": 0,
+  "sources_sha256_lf": {
+    "configs/live_ball_validation_v1.json": "87fd7295e6a8eaad39d14bbceb9f945a1bacf21a6f6dbe1722e021999767db82",
+    "possession/live_ball.py": "211fde4a3043a9e31dc14f4c708816c61dde603e083b34e2376fca2c07919090",
+    "possession/live_ball_validation.py": "df3a18cd8d5f191555f75b12d45fb92159bfac0e1a39f60938b81d1841239e0a",
+    "scripts/live_ball.py": "8f2495932c0614a020130f803544a8b3e53f99042829f6740e6d90c6f4fb1691",
+    "tests/test_live_ball.py": "cba34ed74c11e6232da7292ac0cacdf9afafcf9b0839427fd0d402783ebae5fb",
+    "tests/test_live_ball_validation.py": "1712bcca31f2dbacbd1db71ca532fbed6acbf46c5bae7f0cd1d6b129704da98c"
+  },
+  "success": true,
+  "synthetic_only": true,
+  "tests": 39
+}

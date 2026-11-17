@@ -1,0 +1,24 @@
+{
+  "version": "live-ball-prior-v1",
+  "state_order": [
+    "D",
+    "L"
+  ],
+  "transition_probabilities": [
+    [
+      0.996107169491485,
+      0.003892830508514928
+    ],
+    [
+      0.0033723481701851674,
+      0.9966276518298148
+    ]
+  ],
+  "source_registration_sha256": "82a866b73e50155cab3413277c4bec86151617cc510fce847be90f9507254d88",
+  "policy": "equal_average_of_fold_0_and_6_transition_probabilities",
+  "selected_for_submission": false,
+  "validation_gates_passed": false,
+  "source": "Public IDSSE external training annotations; no target labels",
+  "dataset_revision": "a715a38dfbaf5f58e431727c2b78d174101a703c",
+  "dataset_license": "CC-BY-4.0 per configs/external_sources.json"
+}

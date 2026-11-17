@@ -1,0 +1,15 @@
+{
+  "errors": 0,
+  "failed_test_ids": [],
+  "failures": 0,
+  "skipped": 0,
+  "sources_sha256_lf": {
+    "configs/live_ball_prior_v1.json": "3de2bda03e3e47cbe94ff87e940471703841c68b1d3370b2d8d66f3188a79b60",
+    "possession/live_ball_target.py": "3ac0fd203108e6a2b8e5ff0e623d79dc7a18bec696aab177cd87c3631dd5ec07",
+    "scripts/live_ball_candidate.py": "7b9334288923c0dfded36b9a6781934f18a825c38950b9e7dbfd00c24a22c0ef",
+    "tests/test_live_ball_candidate.py": "7f7dd94d704d46d186050082793bf0077af67169b95e9118d86b59d5770dc592"
+  },
+  "success": true,
+  "synthetic_only": true,
+  "tests": 25
+}

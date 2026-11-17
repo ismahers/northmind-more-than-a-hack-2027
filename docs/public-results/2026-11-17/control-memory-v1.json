@@ -1,0 +1,136 @@
+{
+  "automatic_promotion": false,
+  "folds": {
+    "0": {
+      "gates": {
+        "checks": {
+          "clean": true,
+          "false_HA": false,
+          "long": true,
+          "macro": true,
+          "robust": true,
+          "short": true
+        },
+        "passed": false,
+        "robust_delta": 0.006248744590235389
+      },
+      "identity_parity": true,
+      "metrics": {
+        "baseline": {
+          "clean": {
+            "false_transitions_per_minute": 0.8378175873578095,
+            "long_recall": 0.9555555555555556,
+            "macroF1": 0.8732137270389578,
+            "short_recall": 0.14084507042253522,
+            "spellF1": 0.5255150554675119
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.4904298072338397,
+            "long_recall": 0.6111111111111112,
+            "macroF1": 0.6984787876828765,
+            "short_recall": 0.08450704225352113,
+            "spellF1": 0.36248108925869893
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.5517335331380697,
+            "long_recall": 0.4666666666666667,
+            "macroF1": 0.6992603656957345,
+            "short_recall": 0.09859154929577464,
+            "spellF1": 0.26083052749719415
+          }
+        },
+        "memory": {
+          "clean": {
+            "false_transitions_per_minute": 0.8684694503099245,
+            "long_recall": 0.9555555555555556,
+            "macroF1": 0.8738574784501072,
+            "short_recall": 0.15492957746478872,
+            "spellF1": 0.5356357927786499
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.5006470948845447,
+            "long_recall": 0.6222222222222222,
+            "macroF1": 0.6976914127650965,
+            "short_recall": 0.09154929577464789,
+            "spellF1": 0.36259426847662146
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.5517335331380697,
+            "long_recall": 0.45555555555555555,
+            "macroF1": 0.7000849690570353,
+            "short_recall": 0.09859154929577464,
+            "spellF1": 0.26547085201793724
+          }
+        }
+      }
+    },
+    "6": {
+      "gates": {
+        "checks": {
+          "clean": false,
+          "false_HA": false,
+          "long": true,
+          "macro": true,
+          "robust": false,
+          "short": true
+        },
+        "passed": false,
+        "robust_delta": -0.00036931401603462755
+      },
+      "identity_parity": true,
+      "metrics": {
+        "baseline": {
+          "clean": {
+            "false_transitions_per_minute": 1.1696933506621237,
+            "long_recall": 0.8545454545454545,
+            "macroF1": 0.8337759909085292,
+            "short_recall": 0.12903225806451613,
+            "spellF1": 0.529639889196676
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.7692577891741894,
+            "long_recall": 0.5909090909090909,
+            "macroF1": 0.6629236509371907,
+            "short_recall": 0.08387096774193549,
+            "spellF1": 0.36445698166431595
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.8640977905792264,
+            "long_recall": 0.5454545454545454,
+            "macroF1": 0.6717036570924756,
+            "short_recall": 0.07741935483870968,
+            "spellF1": 0.29064748201438845
+          }
+        },
+        "memory": {
+          "clean": {
+            "false_transitions_per_minute": 1.2013066844638027,
+            "long_recall": 0.8545454545454545,
+            "macroF1": 0.8336428588291063,
+            "short_recall": 0.12903225806451613,
+            "spellF1": 0.5292817679558012
+          },
+          "missing40_15s": {
+            "false_transitions_per_minute": 0.8008711229758684,
+            "long_recall": 0.5909090909090909,
+            "macroF1": 0.662267833806119,
+            "short_recall": 0.08387096774193549,
+            "spellF1": 0.36399437412095637
+          },
+          "missing40_5s": {
+            "false_transitions_per_minute": 0.8851733464470125,
+            "long_recall": 0.5454545454545454,
+            "macroF1": 0.6719291612235785,
+            "short_recall": 0.08387096774193549,
+            "spellF1": 0.29034907597535936
+          }
+        }
+      }
+    }
+  },
+  "full_target_recipe": false,
+  "passes_both": false,
+  "registration_sha256": "2fe3c7975448b5ba958dc902afd146e2fcf782b1fcf5fea65b8835200f304ff5",
+  "schema_version": 1,
+  "scope": "external_seen_validation_neutral_tag_ablation"
+}

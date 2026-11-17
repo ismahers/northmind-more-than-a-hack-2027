@@ -43,7 +43,7 @@ The available IDSSE corpus contains seven matches: **J03WMX, J03WN1, J03WOH, J03
 
 - **H / A:** home/away team control, using geometric, tactical and temporal evidence. Isolated proximity does not determine a change.
 - **Loose balls, flights and contests:** reduce local confidence and favor continuity until evidence supports a change. The system does not independently classify every football action.
-- **D:** a geometrically supported stoppage, including out-of-play situations and a stationary ball without a nearby player. Tagging of quick restarts protects against false geometric stoppages.
+- **D:** the tracking reference can fall back to dead ball when its observation window has no team evidence. Geometry additionally detects out-of-play or stationary, unattended balls. Quick-restart tags suppress false out-of-play cues. Missing tracking alone does not prove a stoppage.
 - **X:** frames outside video blocks corresponding to play. This mask is built without ground truth.
 
 **Variants.** `northmind_sequence` preserves the geometric/tactical reference D mask. An alternative, `northmind_sequence_bridged`, can join D gaps up to **125 frames (5 seconds at 25 fps)** when both sides belong to the same team and no geometric stoppage protection applies. Joining occurs within each block, before and after decoding. Effective parameters are in `possession/inference.py` and `possession/sequence_decoding.py`, not inferred from the submitted CSV.
@@ -64,6 +64,8 @@ These scores describe the recorded **external reference**. They are neither a BA
 Occlusions, tracking and tagging errors, contests and ambiguous restarts can cause errors. Temporal continuity can erase short possessions. The optional bridged variant can absorb genuine stoppages. Loose-ball continuity is a decision policy, not direct proof of which player or team controls the ball.
 
 **Domain transfer remains unresolved.** IDSSE and BAR-ATH differ in domain. Four transformed views enforce consistency under those transformations, but do not prove football understanding. The recorded external test results should not be interpreted as a measurement of final target performance. Further work should prioritize independent evaluation and match diversity before adding rules.
+
+**Additional external validation, 17 November.** Control-memory and learned live/dead alternatives were tested without target labels or video. Neither passed every predeclared guard. Learned live/dead improved the robust objective in both previously seen validation folds, but reduced short-possession recall in some conditions. It remains an experimental alternative; its results are not scores for the submitted recipe or for BAR-ATH.
 
 ## What the checks establish
 

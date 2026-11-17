@@ -1,0 +1,17 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "python": "3.13.17",
+  "skipped": 0,
+  "sources_sha256_lf": {
+    "configs/control_memory_validation_v1.json": "161346de330d53f1c75a266a0a83147c554680965c004c27ec92d2787a409c8e",
+    "possession/control_memory.py": "a3349be9fba62afaa206e3358c2c9783083127fcff9694aa7935e702fa9347e5",
+    "possession/control_memory_validation.py": "eea20a4dc609e8cb356b1141df85dbc0d1fab969adb3ce8c4c9ce96832b1fa3e",
+    "scripts/control_memory.py": "5c512bd231f0482f49880ba84a46b35929e14956979b6072ad359dd3bbad52a5",
+    "tests/test_control_memory.py": "226b31b33c3b066c67560c6ce55f3ca05bb69c8a1d0529a6b31df13f894c6c7b",
+    "tests/test_control_memory_validation.py": "a5c4b5ea8ff2a6898f7d685958c064396c28f053918c5c6d15a4ac0c046a57ba"
+  },
+  "success": true,
+  "synthetic_only": true,
+  "tests": 39
+}
